@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Выбери свой квиз — Милые квизы</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+
+</head>
+<body>
+   <header class="site-header">
+    <div class="header-container">
+      <div class="site-title">Милые квизы</div>
+      <nav class="header-nav">
+        <a href="index.html" class="nav-btn">На главную</a>
+        <button class="nav-btn" id="support-btn">Тех.поддержка</button>
+      </nav>
+    </div>
+  </header>
+
+  <section class="quiz-categories">
+    <button class="category-btn active" data-category="all">Все</button>
+    <button class="category-btn" data-category="fun">Веселые</button>
+    <button class="category-btn" data-category="deep">Глубокие</button>
+  </section>
+
+  <main>
+    <section class="quiz-list-container">
+      <div class="quiz-card" data-category="fun">
+        <img src="images/cats.jpg" alt="Какая ты кошечка?" />
+        <h3>Какая ты кошечка?</h3>
+        <p>Пусть результат раскроет тебя с новой стороны</p>
+        <a href="quiz1.html" class="quiz-button">Пройти квиз</a>
+      </div>
+
+      <div class="quiz-card" data-category="deep">
+        <img src="images/картины.jpg" alt="Какая картина хранила бы твой образ?" />
+        <h3>Какая картина хранила бы твой образ?</h3>
+        <p>Картины говорят о многом. Узнай себя в одной из них</p>
+        <a href="quiz2.html" class="quiz-button">Пройти квиз</a>
+      </div>
+
+      <div class="quiz-card" data-category="deep">
+        <img src="images/тень.jpg" alt="Какова твоя тень?" />
+        <h3>Какова твоя тень?</h3>
+        <p>Несмотря на их молчаливость, твоя тень всегда следует за тобой</p>
+        <a href="quiz3.html" class="quiz-button">Пройти квиз</a>
+      </div>
+
+      <div class="quiz-card" data-category="fun">
+        <img src="images/настроение.jpg" alt="Каково твое настроения исходя из цветов?" />
+        <h3>Каково твое настроения исходя из цветов?</h3>
+        <p>Определи настроение через цвета и оттенки, выбирая близкое сердцу или сознанию</p>
+        <a href="quiz4.html" class="quiz-button">Пройти квиз</a>
+      </div>
+
+      <div class="quiz-card" data-category="fun">
+        <img src="images/цветы.jpg" alt="Какой цветок описывает тебя?" />
+        <h3>Какой цветок описывает тебя?</h3>
+        <p>Все цветы прекрасны, так какой же ты?</p>
+        <a href="quiz5.html" class="quiz-button">Пройти квиз</a>
+      </div>
+
+      <div class="quiz-card" data-category="fun">
+        <img src="images/природа.jpg" alt="Какой из элементов природы тебе подходит?" />
+        <h3>Какой из элементов природы тебе подходит?</h3>
+        <p>Все мы созданы природой. Что подходит тебе больше?</p>
+        <a href="quiz6.html" class="quiz-button">Пройти квиз</a>
+      </div>
+
+      <div class="quiz-card" data-category="deep">
+        <img src="images/аромат.jpg" alt="Каков твой аромат?" />
+        <h3>Каков твой аромат?</h3>
+        <p>Может, он не соответствует реальному, однако и у души также есть свой запах</p>
+        <a href="quiz7.html" class="quiz-button">Пройти квиз</a>
+      </div>
+
+      <div class="quiz-card" data-category="deep">
+        <img src="images/шепот.jpg" alt="Какой шепот окружает тебя в тишине?" />
+        <h3>Какой шепот окружает тебя в тишине?</h3>
+        <p>Тишина всеобъемлюща. Она всегда хранит в себе чей-нибудь шепот</p>
+        <a href="quiz8.html" class="quiz-button">Пройти квиз</a>
+      </div>
+
+      <div class="quiz-card" data-category="deep">
+        <img src="images/воспоминание.jpg" alt="Какое ты воспоминание?" />
+        <h3>Какое ты воспоминание...</h3>
+        <p>а также временной отрезок жизненного пути?</p>
+        <a href="quiz9.html" class="quiz-button">Пройти квиз</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <h4>Приятного прохождения и познания себя благодаря столь забавным квизам!</h4>
+  </footer>
+  <div class="modal" id="support-modal">
+    <div class="modal-content">
+      <button class="modal-close" id="close-support">&times;</button>
+      <h2>Техническая поддержка</h2>
+      <p>Если у вас возникли вопросы или проблемы, пишите нам на <a href="mailto:q777237402@gmail.com">q777237402@gmail.com</a> или звоните по номеру <a href="tel:+375447583121">+375 44 758-31-21</a>.</p>
+    </div>
+  </div>
+
+  <script>
+    // Модалка поддержки
+    const supportBtn = document.getElementById('support-btn');
+    const supportModal = document.getElementById('support-modal');
+    const closeSupport = document.getElementById('close-support');
+
+    supportBtn.addEventListener('click', () => {
+      supportModal.style.display = 'flex';
+    });
+
+    closeSupport.addEventListener('click', () => {
+      supportModal.style.display = 'none';
+    });
+
+    window.addEventListener('click', (e) => {
+      if (e.target === supportModal) {
+        supportModal.style.display = 'none';
+      }
+    });
+
+    // Фильтр категорий
+    const categoryButtons = document.querySelectorAll('.category-btn');
+    const quizCards = document.querySelectorAll('.quiz-card');
+
+    categoryButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        categoryButtons.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        const category = btn.getAttribute('data-category');
+
+        quizCards.forEach(card => {
+          if (category === 'all' || card.getAttribute('data-category') === category) {
+            card.style.display = 'flex';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>

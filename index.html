@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Добро пожаловать — Милые квизы</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    body {
+      overflow: hidden;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header class="site-header">
+    <div class="header-container">
+      <div class="site-title">Милые квизы</div>
+      <nav class="header-nav">
+        <button class="nav-btn" onclick="window.location.href='quiz-list.html'">Каталог</button>
+        <button class="nav-btn" id="rules-btn">Правила</button>
+        <button class="nav-btn" id="support-btn">Тех.поддержка</button>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="welcome-section" id="welcome-section">
+      <h2>Добро пожаловать!</h2>
+      <p>Этот сайт — маленький уголок для тех, кто любит открывать себя заново через лёгкие и уютные квизы. Здесь ты найдёшь добрые и забавные вопросы, которые помогут заглянуть внутрь себя, вспомнить важные моменты и понять свои настроения немного лучше. Наши квизы — это не просто развлечение, а маленькое путешествие в мир твоих мыслей, чувств и воспоминаний, где можно улыбнуться и узнать что-то новое и интересное о себе.</p>
+      <button id="choose-quiz-btn">Сделать выбор</button>
+    </section>
+  </main>
+ <div class="modal" id="rules-modal">
+    <div class="modal-content">
+      <button class="modal-close" id="close-rules">&times;</button>
+      <h2>Правила</h2>
+      <p>
+        1. Проходите квизы с улыбкой<br>
+        2. Будьте честны с собой<br>
+        3. Получайте удовольствие от процесса
+      </p>
+    </div>
+  </div>
+  <!-- Модальное окно тех. поддержки -->
+  <div class="modal" id="support-modal">
+    <div class="modal-content">
+      <button class="modal-close" id="close-support">&times;</button>
+      <h2>Техническая поддержка</h2>
+      <p>Если у вас возникли вопросы или проблемы, пишите нам на <a href="mailto:q777237402@gmail.com">q777237402@gmail.com</a> или звоните по номеру <a href="tel:+375447583121">+375 44 758-31-21</a>.</p>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById('choose-quiz-btn').addEventListener('click', () => {
+      window.location.href = 'quiz-list.html';
+    });
+
+    // Правила
+    const rulesBtn = document.getElementById('rules-btn');
+    const rulesModal = document.getElementById('rules-modal');
+    const closeRules = document.getElementById('close-rules');
+
+    rulesBtn.addEventListener('click', () => {
+      rulesModal.style.display = 'flex';
+    });
+
+    closeRules.addEventListener('click', () => {
+      rulesModal.style.display = 'none';
+    });
+
+    // Техподдержка
+    const supportBtn = document.getElementById('support-btn');
+    const supportModal = document.getElementById('support-modal');
+    const closeSupport = document.getElementById('close-support');
+
+    supportBtn.addEventListener('click', () => {
+      supportModal.style.display = 'flex';
+    });
+
+    closeSupport.addEventListener('click', () => {
+      supportModal.style.display = 'none';
+    });
+
+    // Закрытие модалок кликом вне окна
+    window.addEventListener('click', (e) => {
+      if (e.target === rulesModal) {
+        rulesModal.style.display = 'none';
+      }
+      if (e.target === supportModal) {
+        supportModal.style.display = 'none';
+      }
+    });
+  </script>
+</body>
+</html>
