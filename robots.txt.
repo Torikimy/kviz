@@ -1,4 +1,5 @@
  	User-agent: *
 Disallow: /private/
 Allow: /
+
 Sitemap: https://torikimy.github.io/kviz/sitemap.xml
