@@ -2,4 +2,4 @@
 Disallow: /private/
 Allow: /
 
-Sitemap: https://torikimy.github.io/kviz/sitemap.xml
+Sitemap: https://torikimy.github.io/kviz/robot.txt
